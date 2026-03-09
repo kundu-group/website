@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundu Group | Publications</title>
+  <style>
+    :root {
+      --osu-red: #bb0000;
+      --border: #dddddd;
+      --text: #222222;
+      --max-width: 1050px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #ffffff;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .site-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--osu-red);
+      text-decoration:none; 
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .nav a:hover {
+      color: var(--osu-red);
+    }
+
+    /* paragraph links */
+    p a{
+    color: var(--osu-red);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    }
+
+    p a:hover{
+    text-decoration: underline;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      color: var(--osu-red);
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .publication{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:10px;
+    line-height:1.4;
+    } 
+
+    .pub-number{
+    width:35px;
+    font-size:1.0em;   /* slightly larger number */
+    font-weight:600;
+    margin-right:6px;
+    }
+
+    .publication-title{
+    flex:1;
+    }
+
+    .publication-title a{
+    color:#d16f6f; /*#c94a4a;
+    #color:#d88a8a;      /* pastel red */
+    text-decoration:none;
+    transition:color 0.2s ease;
+    }
+
+    .publication-title a:hover{
+    color:#bb0000;      /* OSU red */
+    text-decoration:underline;
+    }
+    
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="site-title">The Kundu Group</a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#members">Members</a>
+        <a href="index.html#research">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="index.html#join">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Publications</h1>
+
+      <p>
+        Latest updates may be found on 
+        <a href="https://scholar.google.com/citations?user=OjtJ6FgAAAAJ&hl=en">Google Scholar</a> and
+        <a href="https://www.researchgate.net/profile/Sohang-Kundu-2/research">ResearchGate</a>.<br> 
+        * denotes co-corresponding author, and # denotes authors contributed equally.
+      </p>
+
+
+      <div class="publication">
+        <span class="pub-number">22.</span>
+        <span class="publication-title">
+            <a href="https://arxiv.org/abs/2509.14067" target="_blank">
+            Reaction Dynamics of Solvent Decomposition on Lithium using Machine Learning Potentials
+            </a>, Inside Cover<br>
+            S. Kundu*, H.-Z. Ye, and T.C. Berkelbach*, <i></i><b></b> arXiv.2509.14067 (2025).
+        </span>
+      </div>
+
+
+      <div class="publication">
+        <span class="pub-number">21.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.4c01604" target="_blank">
+            Diabatic States of Charge Transfer with Constrained Charge Equilibration
+            </a>, Inside Cover<br>
+            S. Kundu*, H.-Z. Ye, and T.C. Berkelbach*, <i>J. Chem. Theory Comput.</i> <b>21</b>, 3545–3551 (2025).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">20.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/jacs.4c05877" target="_blank">
+            Reaction Rate Theory for Electric Field Catalysis in Solution
+            </a><br>
+            S. Kundu and T. C. Berkelbach, <i>J. Am. Chem. Soc.</i> <b>146</b>, 26041–26047 (2024).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">19.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.chemrev.3c00643" target="_blank">
+            Coherence Phenomena in Chemistry
+            </a><br>
+            J. Schulz, J. Yuly, E. A. Arsenault, K. Parker, S. Chowdhury, R. Dani, S. Kundu, H. Nuomin, Z.  Zhang, J. Valdiviezo, P. Zhang, K. Orcutt, S. J. Jang, G. R. Fleming, N. Makri, J. P. Ogilvie, M. J. Therien, M. R. Wasielewski, and D. N. Beratan, <i>Chem. Rev.</i> <b>124</b>, 11641-11766 (2024).
+        </span>
+      </div>
+
+
+
+      <div class="publication">
+        <span class="pub-number">18.</span>
+        <span class="publication-title">
+            <a href="https://www.pnas.org/doi/10.1073/pnas.2321668121" target="_blank">
+            Quantum information scrambling and chemical reactions
+            </a><br>
+            C. Zhang#, S. Kundu#, N. Makri, M. Gruebele and P. G. Wolynes, <i>Proc. Natl. Acad. Sci. USA</i> <b>121</b>, e2321668121 (2024). Article <a href="https://news.rice.edu/news/2024/chemical-reactions-can-scramble-quantum-information-well-black-holes">featured in press.</a>
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">17.</span>
+        <span class="publication-title">
+            <a href="https://doi.org/10.1021/acs.jpclett.2c01963" target="_blank">
+            PathSum: A C++ and Fortran suite of fully quantum mechanical real-time path integral methods for (multi-)system + bath dynamics
+            </a><br>
+            S. Kundu and N. Makri, <i>J. Chem. Phys. </i> <b>158</b>, 224801 (2023).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">16.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.3c00670" target="_blank">
+            Coherence Maps and Flow of Excitation Energy in the Bacterial Light Harvesting Complex 2
+            </a><br>
+            R.Dani, S. Kundu, and N. Makri, <i>J. Phys. Chem. Lett.</i> <b>14</b>, 3835−3843 (2023), Article <a href="https://todayheadline.co/new-visualization-technique-gives-insight-into-photosynthesis/">featured in press.</a>
+        </span>
+      </div>
+
+       <div class="publication">
+        <span class="pub-number">15.</span>
+        <span class="publication-title">
+            <a href="https://www.science.org/doi/10.1126/sciadv.add0023" target="_blank">
+            Tight Inner Ring Architecture and Quantum Motion of Nuclei Enable Efficient Energy Transfer in Bacterial Light Harvesting
+            </a><br>
+            S. Kundu, R.Dani, and N. Makri, <i>Sci. Adv. </i> <b>8</b>,eadd0023 (2022). Article <a href="https://phys.org/news/2023-06-quantum-visualization-technique-insight-photosynthesis.html">featured in press.</a> 
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">14.</span>
+        <span class="publication-title">
+            <a href="https://doi.org/10.1021/acs.jpclett.2c01963" target="_blank">
+            Interference between Franck-Condon and Herzberg-Teller Terms in the Condensed Phase Molecular Spectra of Metal Based Tetrapyrrole Derivatives
+            </a>, Selected in most read articles in JPC Letters<br>
+            P. P. Roy, S. Kundu, N. Makri, and G. R. Fleming, <i>J. Phys. Chem. Lett..</i> <b>13</b>, 7413-7419 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">13.</span>
+        <span class="publication-title">
+            <a href="https://aip.scitation.org/doi/full/10.1063/5.0093828" target="_blank">
+            B800-to-B850 Relaxation of Excitation Energy in Bacterial Light Harvesting: All-State, All-Mode Path Integral Simulations
+            </a>Editor's choice and cover.<br>
+            S. Kundu, R. Dani, and N. Makri, 
+            <i>J. Chem. Phys.</i> <b>157</b>, 015101 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">12.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c00668" target="_blank">
+            Small Matrix Quantum Classical Path Integral
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Phys. Chem. Lett.</i> <b>13</b>, 3492-3498 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">11.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.2c00846" target="_blank">
+            Franck-Condon and Herzberg-Teller signatures in molecular absorption and emission spectra
+            </a><br>
+            S. Kundu, P. P. Roy, G. R. Fleming and N. Makri, 
+            <i>J. Phys. Chem. B</i> <b>126</b>, 2899-2911 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">10.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/jacs.1c12889" target="_blank">
+            Synthetic control of exciton dynamics in bioinspired cofacial porphyrin dimers
+            </a><br>
+            P. P. Roy, S. Kundu, J. Valdiviezo, G. Bullard, James T. Fletcher, Rui Liu, S. J. Yang, P. Zhang, D. N. Beratan, M. J. Therien, N. Makri and G. R. Fleming, 
+            <i>J. Am. Chem. Soc..</i> <b>144</b>, 6298-6310 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">9.</span>
+        <span class="publication-title">
+            <a href="https://www.annualreviews.org/doi/10.1146/annurev-physchem-090419-120202" target="_blank">
+            Intramolecular Vibrations in Excitation Energy Transfer: Insights from Real-Time Path Integral Calculations
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>Ann. Rev. Phys. Chem.</i> <b>73</b>, 349-375 (2022).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">8.</span>
+        <span class="publication-title">
+            <a href="https://pubs.rsc.org/en/content/articlelanding/2021/CP/D1CP02135D" target="_blank">
+            Electronic-vibrational density evolution in a perylene bisimide dimer: mechanistic insights into excitation energy transfer
+            </a>, PCCP Hot Article, and Inside Cover<br>
+            S. Kundu and N. Makri,
+            <i> Phys. Chem. Chem. Phys.</i> <b>23</b>, 15503-15514 (2021).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">7.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.jpcc.0c09405" target="_blank">
+            Time evolution of bath properties in spin-boson dynamics
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Phys. Chem. B</i> <b>125</b>, 8137-8151 (2021).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">6.</span>
+        <span class="publication-title">
+            <a href="https://aip.scitation.org/doi/10.1063/5.0041514" target="_blank">
+            Origin of vibrational features in the excitation energy transfer dynamics of perylene bisimide J-aggregates
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Chem. Phys.</i> <b>154</b>, 114301 (2021).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">5.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.jpcc.0c09405" target="_blank">
+            Exciton-vibration dynamics in J-aggregates of a perylene bisimide from real-time path integral calculations
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Phys. Chem. C</i> <b>125</b>, 201-210 (2021).
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="pub-number">4.</span>
+        <span class="publication-title">
+            <a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.0c02760" target="_blank">
+            Real-time path integral simulation of exciton-vibration dynamics in light harvesting bacteriochlorophyll aggregates
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Phys. Chem. Lett..</i> <b>11</b>, 8783-8789 (2020), Article <a href="https://chemistry.illinois.edu/news/2021-03-08/high-level-simulations-bring-insights-quantum-effects-photosynthesis">featured in press.</a>
+        </span>
+      </div>
+
+
+      <div class="publication">
+        <span class="pub-number">3.</span>
+        <span class="publication-title">
+            <a href="https://www.tandfonline.com/doi/abs/10.1080/00268976.2020.1797200?journalCode=tmph20" target="_blank">
+            Efficient matrix factorization of the modular path integral for extended systems
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>Mol. Phys..</i> <b>60</b>, e1797200 (2020), Proceedings of the Sannibel Symposium.
+        </span>
+      </div>
+        
+      <div class="publication">
+        <span class="pub-number">2.</span>
+        <span class="publication-title">
+            <a href="https://aip.scitation.org/doi/10.1063/5.0014838" target="_blank">
+            Modular path integral for for finite-temperature dynamics of extended systems with intramolecular vibrations
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Chem. Phys.</i> <b>153</b>, 044124 (2020).
+        </span>
+      </div>
+        
+      <div class="publication">
+        <span class="pub-number">1.</span>
+        <span class="publication-title">
+            <a href="https://aip.scitation.org/doi/10.1063/1.5108692" target="_blank">
+            Modular path integral for discrete systems with non-diagonal couplings
+            </a><br>
+            S. Kundu and N. Makri, 
+            <i>J. Chem. Phys.</i> <b>151</b>, 074110 (2019).
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University
+    </div>
+  </footer>
+
+</body>
+</html>

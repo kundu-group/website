@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundu Group | The Ohio State University</title>
+  <style>
+    :root {
+      --osu-red: #bb0000;
+      --osu-dark-red: #8c0000;
+      --osu-gray: #666666;
+      --light-gray: #f5f5f5;
+      --border: #dddddd;
+      --text: #222222;
+      --max-width: 1050px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--osu-red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .site-title {
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: var(--osu-red);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.98rem;
+    }
+
+    .nav a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--osu-red);
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--osu-red) 0%, var(--osu-dark-red) 45%, #222222 100%);
+      color: white;
+      padding: 78px 0 88px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero .eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 7px 12px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      font-weight: normal;
+    }
+
+    .hero p {
+      max-width: 780px;
+      font-size: 1.18rem;
+      margin-top: 22px;
+      margin-bottom: 0;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      margin: 0 0 28px;
+      color: var(--osu-red);
+      font-size: 2rem;
+      font-weight: normal;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 38px;
+    }
+
+    .news-item {
+      margin-bottom: 28px;
+      padding-left: 18px;
+      border-left: 4px solid var(--osu-red);
+    }
+
+    .news-date {
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      color: var(--osu-gray);
+      text-transform: uppercase;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    .sidebar-box {
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      padding: 24px;
+    }
+
+    .sidebar-box h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--osu-red);
+      font-size: 1.45rem;
+      font-weight: normal;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 34px;
+    }
+
+    .member {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .member-photo {
+      width: 130px;
+      height: 155px;
+      background: linear-gradient(155deg, rgba(187,0,0,0.18), rgba(0,0,0,0.06));
+      border: 1px solid var(--border);
+    }
+
+    .member h3 {
+      margin: 0 0 4px;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+
+    .member-role {
+      color: var(--osu-red);
+      font-size: 0.92rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .research-header {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .research-intro {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+      align-items: start;
+    }
+
+    .research-panel {
+      text-align: center;
+      padding: 10px 10px 0;
+    }
+
+    .research-graphic {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1976d2, #0f6cc4);
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      overflow: hidden;
+    }
+
+    .research-graphic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .research-panel h3 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      color: #111111;
+    }
+
+    .research-panel p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333333;
+    }
+
+    .about-sohang-section {
+      background: #f2f2f2;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-sohang-title {
+      text-align: center;
+      margin: 0 0 28px;
+      color: #222222;
+      font-size: 2.9rem;
+      line-height: 1.1;
+      font-weight: bold;
+    }
+
+    .about-sohang-text {
+      max-width: 1120px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: #333333;
+    }
+
+    .about-sohang-text p {
+      margin: 0 0 18px;
+    }
+
+    .about-subheading {
+      margin: 44px 0 18px;
+      color: #222222;
+      font-size: 1.95rem;
+      font-weight: normal;
+    }
+
+    .awards-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .awards-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .awards-list li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #b8b8b8;
+      font-size: 0.8rem;
+      line-height: 1.9;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      margin-top: 48px;
+      padding-top: 34px;
+      border-top: 1px solid #d9d9d9;
+      align-items: start;
+    }
+
+    .contact-block h3 {
+      margin: 0 0 18px;
+      color: #222222;
+      font-size: 1.95rem;
+      font-weight: normal;
+    }
+
+    .contact-details {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #333333;
+    }
+
+    .contact-details div {
+      margin-bottom: 6px;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      min-height: 210px;
+      background: linear-gradient(135deg, #e5e5e5, #d4d4d4);
+      border: 1px solid #cfcfcf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666666;
+      font-size: 0.98rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .join-box {
+      background: linear-gradient(135deg, var(--osu-red), var(--osu-dark-red));
+      color: white;
+      padding: 32px;
+    }
+
+    .join-box h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+
+    .join-box a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 36px;
+      font-size: 0.95rem;
+      color: var(--osu-gray);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .members-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .contact-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .member {
+        grid-template-columns: 1fr;
+      }
+
+      .member-photo {
+        width: 100%;
+        max-width: 180px;
+        height: 200px;
+      }
+
+      .research-title,
+      .about-sohang-title {
+        font-size: 2.2rem;
+      }
+
+      .research-graphic {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="site-title">The Kundu Group</a>
+      <nav class="nav">
+        <a href="#members">Members</a>
+        <a href="#research">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="#join">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow">Theoretical Chemistry at The Ohio State University</div>
+      <h1>The Kundu Group</h1>
+      <p>
+        We investigate the coupled dynamics of electrons, nuclei, spins, and electromagnetic
+        fields in molecular and quantum materials. Our group develops predictive numerical
+        methods at the interface of theoretical chemistry, condensed matter, and chemical physics.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <h2 class="section-title">Recent News</h2>
+
+          <div class="news-item">
+            <div class="news-date">March 2026</div>
+            <div>
+              The Kundu Group will launch at The Ohio State University in July 2026. We are
+              actively recruiting PhD students, postdocs, and undergraduate researchers.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-date">February 2026</div>
+            <div>
+              Our research program will focus on charge transfer at electrochemical interfaces,
+              spin–lattice dynamics in quantum materials, and excited-state / photoredox dynamics.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-date">January 2026</div>
+            <div>
+              We are building a computational research environment spanning electronic structure,
+              machine learning force fields, path integrals, and non-Markovian quantum dynamics.
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-box">
+            <h3>About the Group</h3>
+            <p>
+              Our research connects electronic structure theory, machine learning, and open-system
+              quantum dynamics to answer fundamental questions in electrochemistry, quantum materials,
+              and excited-state chemistry.
+            </p>
+            <p>
+              We aim to develop methods that connect microscopic mechanisms to experimentally
+              measurable response, with strong ties to catalysis, spectroscopy, and quantum technologies.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="members">
+      <div class="container">
+        <h2 class="section-title">Group Members</h2>
+
+        <div class="members-grid">
+          <div class="member">
+            <div class="member-photo"></div>
+            <div>
+              <h3>Sohang Kundu</h3>
+              <div class="member-role">Principal Investigator</div>
+              <div>
+                Postdoctoral Research Scientist, Columbia University<br>
+                PhD, University of Illinois Urbana-Champaign<br>
+                Theoretical chemistry, condensed matter, quantum dynamics
+              </div>
+            </div>
+          </div>
+
+          <div class="member">
+            <div class="member-photo"></div>
+            <div>
+              <h3>Open Position</h3>
+              <div class="member-role">Postdoctoral Researcher</div>
+              <div>
+                Computational chemistry / quantum dynamics / materials modeling.<br>
+                Please email with your CV and research interests.
+              </div>
+            </div>
+          </div>
+
+          <div class="member">
+            <div class="member-photo"></div>
+            <div>
+              <h3>Open Position</h3>
+              <div class="member-role">PhD Student</div>
+              <div>
+                Interested students from chemistry, physics, materials science,
+                and related areas are encouraged to get in touch.
+              </div>
+            </div>
+          </div>
+
+          <div class="member">
+            <div class="member-photo"></div>
+            <div>
+              <h3>Open Position</h3>
+              <div class="member-role">Undergraduate Researcher</div>
+              <div>
+                Students interested in simulation, programming, and theoretical chemistry are welcome.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="research-header">
+          <h2 class="section-title">Research areas</h2>
+          <div class="research-intro">
+            We work on a range of quantum-mechanical problems motivated by excited-state phenomena.
+            This research occurs at the fascinating interface of physical chemistry, condensed-matter
+            physics, and materials science.
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-panel">
+            <div class="research-graphic">
+              Image
+              <!-- Example:
+              <img src="images/interfaces.jpg" alt="Quantum dynamics and spectroscopy">
+              -->
+            </div>
+            <h3>Quantum dynamics and spectroscopy</h3>
+            <p>
+              Building on modern theories of quantum dynamics, we develop powerful simulation
+              techniques for nonequilibrium and time-resolved spectroscopies. These tools enable
+              the accurate simulation of large and complex systems, providing new insights into
+              excited-state structure and dynamics.
+            </p>
+          </div>
+
+          <div class="research-panel">
+            <div class="research-graphic">
+              Image
+              <!-- Example:
+              <img src="images/emerging-materials.jpg" alt="Emerging materials">
+              -->
+            </div>
+            <h3>Emerging materials</h3>
+            <p>
+              We are actively exploring the excited-state behavior of fundamentally interesting
+              and technologically promising materials, especially those that are anisotropic,
+              layered, or low-dimensional. Particular materials of interest include conjugated
+              polymers, organic molecular crystals, and quasi-two-dimensional inorganic semiconductors.
+            </p>
+          </div>
+
+          <div class="research-panel">
+            <div class="research-graphic">
+              Image
+              <!-- Example:
+              <img src="images/electronic-structure.jpg" alt="Condensed-phase electronic structure">
+              -->
+            </div>
+            <h3>Condensed-phase electronic structure</h3>
+            <p>
+              Aiming towards highly accurate but insightful descriptions of electronic excitations,
+              we formulate and apply electronic structure methods adapted for the condensed phase.
+              Some of our favorite tools are low-energy effective theories, many-body diagrammatics,
+              and coupled-cluster techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-sohang-section" id="about-sohang">
+      <div class="container">
+        <h2 class="about-sohang-title">About Sohang</h2>
+
+        <div class="about-sohang-text">
+          <p>
+            Sohang Kundu is an incoming Assistant Professor in the Department of Chemistry and
+            Biochemistry at The Ohio State University. His research lies at the interface of
+            theoretical chemistry, condensed-matter physics, and materials science, with a focus
+            on developing predictive numerical methods for complex molecular and condensed-phase systems.
+          </p>
+
+          <p>
+            He develops theories and simulation strategies for the coupled dynamics of electrons,
+            nuclei, spins, and electromagnetic fields. His work spans electrochemical interfaces,
+            magnetic quantum materials, nonequilibrium spectroscopy, and open-system quantum dynamics,
+            with an emphasis on connecting microscopic mechanisms to experimentally observable response.
+          </p>
+
+          <h3 class="about-subheading">Selected Honors and Awards</h3>
+          <ul class="awards-list">
+            <li>Example Fellowship (Year)</li>
+            <li>Example Award (Year)</li>
+            <li>Example Prize (Year)</li>
+          </ul>
+
+          <div class="contact-row">
+            <div class="contact-block">
+              <h3>The Ohio State University</h3>
+              <div class="contact-details">
+                <div>Department of Chemistry and Biochemistry</div>
+                <div>The Ohio State University</div>
+                <div>Columbus, Ohio</div>
+                <div>Email: <a href="mailto:sohang@example.com">sohang@example.com</a></div>
+              </div>
+            </div>
+
+            <div class="map-placeholder">
+              Map placeholder<br />
+              Replace with an embedded map or campus image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="join">
+      <div class="container">
+        <div class="join-box">
+          <h2>Join Us</h2>
+          <p>
+            We are building an inclusive and collaborative research group and welcome students
+            and postdocs from a broad range of backgrounds. Please get in touch with your CV
+            and a short note about your research interests.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University</div>
+      <div>Styled in an academic static-site spirit with Ohio State scarlet</div>
+    </div>
+  </footer>
+
+</body>
+</html>

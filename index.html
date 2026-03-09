@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kundu Group | The Ohio State University</title>
+
+<style>
+
+:root {
+  --osu-red:#bb0000;
+  --osu-dark-red:#8c0000;
+  --border:#dddddd;
+  --light-gray:#f5f5f5;
+  --text:#222222;
+  --max-width:1050px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Georgia,"Times New Roman",Times,serif;
+color:var(--text);
+line-height:1.65;
+background:white;
+}
+
+a{
+color:var(--osu-red);
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.container{
+width:min(var(--max-width),calc(100% - 40px));
+margin:auto;
+}
+
+.topbar{
+border-bottom:1px solid var(--border);
+background:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.topbar-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+}
+
+.site-title{
+font-size:1.35rem;
+font-weight:bold;
+color:var(--osu-red);
+text-decoration:none;
+}
+
+.nav{
+display:flex;
+gap:22px;
+}
+
+.nav a{
+color:#222;
+text-decoration:none;
+}
+
+.nav a:hover{
+color:var(--osu-red);
+}
+
+.hero{
+background:linear-gradient(135deg,var(--osu-red),var(--osu-dark-red),#222);
+color:white;
+padding:80px 0;
+}
+
+.hero .eyebrow{
+border:1px solid rgba(255,255,255,.4);
+display:inline-block;
+padding:6px 12px;
+font-size:.75rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.hero h1{
+margin:0;
+font-size:3rem;
+font-weight:normal;
+}
+
+.hero p{
+margin-top:20px;
+max-width:760px;
+font-size:1.1rem;
+}
+
+.section{
+padding:60px 0;
+}
+
+.section-title{
+font-size:2rem;
+color:var(--osu-red);
+margin-bottom:30px;
+border-bottom:1px solid var(--border);
+padding-bottom:10px;
+font-weight:normal;
+}
+
+.two-col{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
+}
+
+.news-item{
+border-left:4px solid var(--osu-red);
+padding-left:16px;
+margin-bottom:26px;
+}
+
+.news-date{
+font-size:.8rem;
+letter-spacing:.08em;
+color:#666;
+text-transform:uppercase;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.sidebar-box{
+background:var(--light-gray);
+border:1px solid var(--border);
+padding:24px;
+}
+
+.sidebar-box h3{
+margin-top:0;
+color:var(--osu-red);
+font-size:1.3rem;
+font-weight:normal;
+}
+
+.members-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.member{
+display:grid;
+grid-template-columns:130px 1fr;
+gap:18px;
+}
+
+.member-photo{
+  width:130px;
+  height:150px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+
+.member-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.member h3{
+margin:0 0 6px;
+font-size:1.25rem;
+font-weight:normal;
+}
+
+.member-role{
+color:#222222;
+#color:var(--osu-red);
+font-size:.8rem;
+font-weight:bold;
+text-transform:uppercase;
+margin-bottom:8px;
+}
+
+.member{
+font-size:0.84rem;
+}
+
+.research-header{
+text-align:center;
+margin-bottom:40px;
+}
+
+.research-intro{
+max-width:900px;
+margin:auto;
+text-align:center;
+margin-bottom:40px;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.research-panel{
+text-align:center;
+}
+
+.research-graphic{
+width:180px;
+height:180px;
+border-radius:50%;
+background:#222222;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+overflow:hidden;   /* ADDED: crops image to circle */
+}
+
+.research-graphic img{
+width:100%;
+height:100%;
+object-fit:cover;   /* ADDED: fills circle properly */
+display:block;
+}
+
+
+.research-panel h3{
+font-size:1.2rem;
+margin-bottom:10px;
+color:#555;
+#color:var(--osu-red);
+font-weight:medium;
+}
+
+.about-text{
+max-width:900px;
+margin:0;
+}
+
+.awards{
+margin-top:30px;
+}
+
+.awards ul{
+padding-left:20px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:30px;
+}
+
+.map-placeholder{
+width:100%;
+height:220px;
+background:#ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#666;
+}
+
+.join-box{
+background:linear-gradient(135deg,var(--osu-red),var(--osu-dark-red));
+color:white;
+padding:30px;
+}
+
+.join-box h2{
+margin-top:0;
+font-weight:normal;
+}
+
+footer{
+border-top:1px solid var(--border);
+padding:20px 0;
+font-size:.9rem;
+color:#666;
+margin-top:40px;
+}
+
+.footer-row{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+@media(max-width:800px){
+
+.two-col{
+grid-template-columns:1fr;
+}
+
+.members-grid{
+grid-template-columns:1fr;
+}
+
+.research-grid{
+grid-template-columns:1fr;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+<div class="container topbar-inner">
+
+<a href="index.html" class="site-title">The Kundu Group</a>
+
+<nav class="nav">
+<a href="#members">Members</a>
+<a href="#research">Research</a>
+<a href="publications.html">Publications</a>
+<a href="#join">Join Us</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">Theoretical Chemistry at The Ohio State University</div>
+
+<h1>The Kundu Group</h1>
+
+<p>
+We investigate the coupled dynamics of electrons, atomic nuclei, and electromagnetic fields at the crossroads of molecular and materials science. We develop new simulation techniques combining ideas of theoretical chemistry and condensed matter physics.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container two-col">
+
+<div>
+
+<h2 class="section-title">Recent News</h2>
+
+<div class="news-item">                                                                                            
+<div class="news-date">March 2026</div>
+We are actively recruiting PhD students, postdocs, and undergraduate researchers. Interested in joining us? Write to Sohang at <a href="mailto:sk5389@columbia.edu">sk5389@columbia.edu</a> with your latest CV.
+</div>
+
+<div class="news-item">
+<div class="news-date">March 2026</div>
+The Kundu Group will launch at The Ohio State University in Fall, 2026.
+</div>
+
+</div>
+
+<aside>
+
+<div class="sidebar-box">
+
+<h3>About the Group</h3>
+
+<p>
+We seek principles for designing next-generation optoelectronics, heterogeneous catalysts, and quantum information technologies. To discover such design principles, we develop state-of-the-art dynamics methods, as well as accurate electronic structure and machine-learning representations of ground and excited state potential energy surfaces. 
+</p>
+
+<p>
+We aspire to be a world-leading research group, not only through transformative discoveries but also in fostering a supportive environment where every member grows individually and as part of the team.
+<p>
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+<section class="section" id="members">
+
+<div class="container">
+
+<h2 class="section-title">Group Members</h2>
+
+<div class="members-grid">
+
+<div class="member">
+<div class="member-photo">
+  <img src="images/Sohang_DP.jpg" alt="Open Position">                                                                   
+</div>
+<div>
+<h3>Sohang Kundu</h3>
+<div class="member-role">Principal Investigator</div>
+Postdoc, Columbia University (2023-2026)<br>
+PhD, UIUC (2023)<br>
+MSc. IIT Bombay (2017)<br>
+BSc. Presidency University (2015)<br>
+<div>
+&#9993; <a href="mailto:sk5389@columbia.edu">sk5389@columbia.edu</a>
+</div>
+
+</div>
+</div>
+
+<div class="member">
+<div class="member-photo">
+  <img src="images/OSU.jpg" alt="Open Position">
+</div>
+<div>
+<h3>Open Position</h3>
+<div class="member-role">Postdoctoral Researcher</div>
+Candidates with a PhD in any area of theoretical chemistry, condensed matter physics 
+or computational materials science are encouraged to email their CV to Sohang.
+</div>
+</div>
+
+<div class="member">
+<div class="member-photo">
+  <img src="images/OSU.jpg" alt="Open Position">
+</div>
+<div>
+<h3>Open Position</h3>
+<div class="member-role">Graduate Student</div>
+Interested students are welcome to apply through the OSU graduate chemistry program. 
+When you apply, feel free to send Sohang an email.
+</div>
+</div>
+
+<div class="member">
+<div class="member-photo">
+  <img src="images/OSU.jpg" alt="Open Position">
+</div>
+<div>
+<h3>Open Position</h3>
+<div class="member-role">Undergraduate Researcher</div>
+OSU undergrads interested to learn about research in theory and simulation are encouraged to 
+write to us. You can also drop by at our group office during work hours.  
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="research">
+
+<div class="container">
+
+<h2 class="section-title">Research Directions</h2>
+
+<div class="research-intro">
+We study the fascinating consequences of interactions between electronic excitations and atomic or lattice displacements in condensed-phase systems, often under out-of-equilibrium conditions. We develop numerical simulations to discover i) how such interactions determine spectroscopic and kinetic responses measured in experiments, and ii) how such interactions can be tailored for designing functional materials. We are currently invested in the following directions:
+</div>
+
+<div class="research-grid">
+
+<div class="research-panel">
+
+<div class="research-graphic">
+  <img src="images/Res1.jpg" alt="Electrochemical Interfaces">
+</div>
+
+<h3>Electrochemical Interfaces</h3>
+
+<p>
+Solid-liquid and solid-solid interfaces govern modern energy conversion, yet their microscopic charge-transfer (CT) mechanisms remain fundamentally unresolved. We are building machine-learning approaches to enable fully atomistic CT  dynamics simulations at electrochemical interfaces. 
+</p>
+
+</div>
+
+<div class="research-panel">
+
+
+<div class="research-graphic">
+  <img src="images/Res2.jpg" alt="Magnetic Quantum Materials">
+</div>
+
+
+<h3>Magnetic Quantum Materials</h3>
+
+<p>
+Interaction between spins and lattice displacements critically determines the performance of candidate materials for quantum computing applications. We are developing quantum dynamics methods to resolve the signatures of coupled quasiparticle excitations in magnetic materials.
+</p>
+
+</div>
+
+<div class="research-panel">
+
+<div class="research-graphic">
+  <img src="images/Res3.jpg" alt="Condensed-phase Spectroscopy">                                                     
+</div>
+
+<h3>Condensed-phase Spectroscopy</h3>
+
+<p>
+Time-resolved spectroscopy of biological and solid-state materials reveals intriguing environmental effects that critically shape reaction pathways and finite-temperature response. We are formulating first-principles approaches to simulate electronic/vibrational spectroscopy in the ultrafast regime.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">About Sohang</h2>
+
+<div class="about-text">
+
+<p>
+Sohang Kundu is an incoming Assistant Professor in the Department of Chemistry and
+Biochemistry at The Ohio State University. Sohang grew up in India, and completed his BSc. from Presidency University in 2015 and MSc. from IIT Bombay in 2017. He then moved to the US for graduate studies, and obtained
+his PhD in 2023 from the University of Illinois Urbana Champaign, working with Prof. Nancy Makri. 
+From 2023-2026 he was a postdoctoral research scientist in Prof. Tim Berkelbach's group at Columbia University.
+Sohang will join the faculty at OSU in July, 2026.
+</p>
+
+</div>
+
+<div class="awards">
+
+<h3>Selected Honors and Awards</h3>
+
+<ul>
+<li>
+2025 <a href="https://phys-acs.org/phys-2025-young-investigator-award-winners/">
+ACS Physical Chemistry Young Investigator Award
+</a>
+</li>
+
+<li>
+2024 <a href="https://www.aps.org/funding-recognition/award/justin-jankunas-dissertation">
+Justin Jankunas Doctoral Dissertation in Chemical Physics by APS
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="contact-grid">
+
+<div>
+
+<h3>The Ohio State University</h3>
+
+Newman and Wolfrom Laboratory of Chemistry<br>
+100 W. 18th Ave, <br>
+Columbus, OH 43210<br>
+
+<div>
+&#9993; <a href="mailto:sk5389@columbia.edu">sk5389@columbia.edu</a>
+</div>
+
+</div>
+
+<div class="map-placeholder">
+
+<iframe
+width="100%"
+height="220"
+style="border:0"
+loading="lazy"
+allowfullscreen
+referrerpolicy="no-referrer-when-downgrade"
+src="https://maps.google.com/maps?q=Ohio%20State%20University%20Department%20of%20Chemistry&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="join">
+
+<div class="container">
+
+<div class="join-box">
+
+<h2>Join Us</h2>
+
+<p>
+We welcome students and postdocs from all backgrounds to join us in the vibrant city of Columbus! If you're interested in joining our team, write to Sohang with your latest CV.  
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-row">
+
+<div>
+© Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>

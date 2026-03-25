@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundu Group | Expectations</title>
+  <style>
+    :root {
+      --osu-red: #bb0000;
+      --border: #dddddd;
+      --text: #222222;
+      --max-width: 1050px;
+      --light-gray: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #ffffff;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .site-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--osu-red);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .nav a:hover {
+      color: var(--osu-red);
+    }
+
+    p a {
+      color: var(--osu-red);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      color: var(--osu-red);
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .page-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .main-content {
+      min-width: 0;
+    }
+
+    .main-content h3 {
+      color: var(--osu-red);
+      font-size: 1.35rem;
+      font-weight: normal;
+      margin-top: 38px;
+      margin-bottom: 10px;
+      scroll-margin-top: 95px;
+    }
+
+    .main-content h4 {
+      font-size: 1.03rem;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #222222;
+      scroll-margin-top: 95px;
+    }
+
+    .main-content p {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 92px;
+      align-self: start;
+    }
+
+    .toc-box {
+      border: 1px solid var(--border);
+      background: var(--light-gray);
+      padding: 22px 20px;
+    }
+
+    .toc-title {
+      color: var(--osu-red);
+      font-size: 1.08rem;
+      margin: 0 0 14px 0;
+      font-weight: normal;
+    }
+
+    .toc-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-links a {
+      color: #444444;
+      text-decoration: none;
+      font-size: 0.96rem;
+      line-height: 1.45;
+    }
+
+    .toc-links a:hover {
+      color: var(--osu-red);
+      text-decoration: underline;
+    }
+
+    .toc-links .sub-link {
+      padding-left: 14px;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    @media (max-width: 900px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .toc {
+        position: static;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="site-title">The Kundu Group</a>
+
+      <nav class="nav">
+        <a href="index.html#members">Members</a>
+        <a href="index.html#research">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="expectations.html">Expectations</a>
+        <a href="index.html#join">Openings</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container page-layout">
+
+      <div class="main-content">
+        <h1 class="section-title">Expectations</h1>
+
+        <p>
+          Our group aims to combine intellectual ambition with a supportive and collaborative group  
+          culture. The goal of this page is not to impose rigid rules, but to make Sohang's mentorship philosophy, and 
+          the group's mutual expectations transparent from the outset. Group members are encouraged to share 
+          their feedback as and when they face difficulties or think of new possibilities. 
+        </p>
+
+        <h3 id="mentorship-values">Mentorship Values</h3>
+        <p>
+          Here are some core values that Sohang aspires to cultivate.
+        </p>
+
+        <p>
+          (i) <strong>Learning new things together:</strong> 
+          Group members come in with different backgrounds, strengths, and goals, and we do not 
+          expect everyone to follow the same path. What we do expect is deep curiosity, and a willingness 
+          to continuously learn new things and share those learnings generously with others.
+        </p>
+        <p>
+          (ii) <strong>"I don't know" is always welcome:</strong>
+          We take pride in being able to quickly say "I don't know" or "I'm not sure", because that is 
+          where learning begins. You might be surprised by how frequently Sohang will say the same. This 
+          habit strengthens our conviction when we say "I think so" or "I understand". What we do not want 
+          to hear ever is "I don't want to know" or "I don't care".
+        </p>
+        <p>
+          (iii) <strong>No law of conservation of knowledge:</strong>
+          Unlike mass or energy, knowledge is not conserved. When we learn, teach, and share, we create 
+          positive superpositions. We aim to build an environment where ideas can be discussed early, even 
+          before they are fully formed. Many good projects begin with partial thoughts, confusion, and 
+          iteration. Our group welcomes that process at every step.
+        </p>
+        <p>
+          (iv) <strong>Every question is an opportunity:</strong>
+          One of the most powerful tools a scientist has is the ability to ask questions. Our group 
+          strongly encourages asking and answering scientific questions of all kinds. There is no such thing as 
+          a stupid question if it is genuine and rooted in curiosity or necessity.
+        </p>
+        <p>
+          (v) <strong>The best way to learn is often to do:</strong>
+          Many areas of theoretical chemistry are so specialized that it is 
+          impossible to feel fully prepared before beginning research. The best way to learn is often by 
+          doing, and by making and admitting to one's mistakes with complete honesty. The goal is to get the best 
+          at figuring out when you are wrong, and to learn how to avoid making the same mistake again.
+        </p>
+
+        <p>
+          (vi) <strong>Zero tolerance for intolerance:</strong>
+          We do not tolerate discrimination against group members on any grounds. If such incidents arise, 
+          they will be addressed immediately and with utmost seriousness.
+        </p>
+
+        <h3 id="work-hours">Work Hours</h3>
+        <p>
+        We designate the work week as approximately 9 am–6 pm, Monday through Friday. However, research often 
+        involves extended periods of reading, coding, writing, thinking, and discussion, and these do not always 
+        occur on the same schedule for everyone. Even for the same person, different projects and different 
+        stages of a project may require some flexibility in schedule. Nevertheless, being physically present 
+        around one another, and becoming comfortable working together, is an important aspect of doing science. 
+        Informal conversations, spontaneous questions, and simply sharing a space can play a meaningful role in 
+        how ideas develop.
+        </p>
+
+        <p>
+        With this in mind, group members are expected to maintain at least six work hours in the office per day for 
+        approximately four days each week. This expectation is to encourage a collaborative work environment 
+        rather than impose rigid structure. Reasonable exceptions and flexibility can be arranged in consultation 
+        with Sohang, especially in cases of disabilities, personal circumstances, or emergencies.
+        </p>
+
+        <p>
+        Sohang may occasionally send messages outside of the designated work week if something comes to mind 
+        that might otherwise be forgotten. However, timely responses are only expected during the work week 
+        from both Sohang and other group members.
+        </p>
+
+        <h3 id="meetings-sohang">Meetings with Sohang</h3>
+        <p>
+          Every group member will have a scheduled one-hour meeting with Sohang each week. These meetings are 
+          intended to provide dedicated time to discuss progress, challenges, and broader ideas related to 
+          research and professional development.
+        </p>
+        <p>
+          In addition, Sohang will hold office hours on two days each week (six hours total), during which 
+          group members are welcome to drop in with questions, ideas, or problems. These informal interactions 
+          are especially helpful for younger students, but are open to everyone.
+        </p>
+        <p>
+          For quicker questions, communication through the group’s Microsoft Teams space is always encouraged.
+        </p>
+
+        <h3 id="group-meetings">Group Meetings</h3>
+        <p>
+          Group meetings are a central part of how we learn from one another. They are not only for reporting 
+          polished results; they are also for learning new ideas, discussing papers, sharing technical roadblocks, 
+          and getting feedback early. Group members are expected to attend regularly, participate actively, 
+          and listen carefully to others.
+        </p>
+        <p>
+          Meetings will include a range of formats: (i) research updates, (ii) journal clubs, (iii) topic reviews, 
+          (iv) coding tutorials, and (v) conference or defense practice.
+        </p>
+
+        <h3 id="paper-writing">Paper Writing</h3>
+        <p>
+          Writing is a core part of scientific training. Preparing a first or second draft is often the stage 
+          at which ideas become sharper, weaknesses emerge, and the real contribution to the literature becomes clear.
+        </p>
+        <p>
+          For a graduate student’s first paper, Sohang will typically write the initial draft and then edit it 
+          collaboratively with the student. For subsequent papers, the first author is expected to prepare the 
+          initial draft (typically in Overleaf) and share it with Sohang for feedback and revision.
+        </p>
+        <p>
+          For preferred graphics styles and text formatting, please ask Sohang for the group repository.
+        </p>
+
+        <h3 id="attending-conferences">Attending Conferences</h3>
+        <p>
+          Conferences are invaluable not only for presenting research, but also for learning how the field is evolving, 
+          meeting collaborators, and engaging with the broader scientific community.
+        </p>
+        <p>
+          Graduate students will begin attending conferences in their second or third year, depending on when their 
+          first one or two papers are completed. Postdoctoral scientists will begin attending toward the end of their 
+          first year.
+        </p>
+        <p>
+          Depending on the availability of funds, each group member will typically attend one domestic conference 
+          (e.g., ACS, APS, or GRC) per year.
+        </p>
+
+        <h3 id="code-backup">Code/Data Backup</h3>
+        <p>
+          Every group member is responsible for maintaining reliable backups of their code and data. Losing 
+          access to carefully completed research is one of the most serious mishaps that can occur in a theory 
+          group, and we will do our best to avoid such situations.
+        </p>
+        <p>
+          (If you have not heard about it already, ask Sohang about his painful “water bottle accident.”)
+        </p>
+        <p>
+          To help create accountability, we will alternate between code and data backup deadlines every week. Sohang 
+          will appreciate a short message on Microsoft Teams each time a backup is completed. 
+        </p>
+
+        <h3 id="social-activities">Social Activities</h3>
+        <p>
+          The group should have a real sense of community. Social activities help make research more 
+          enjoyable and strengthen trust and communication within the group. These will include:
+        </p>
+        <p>
+          (i) <strong>Coffee walks:</strong> If schedules permit, once a week the group is free to join 
+          Sohang on a walk to a nearby coffee shop for a drink/dessert break. This provides an opportunity to 
+          step outdoors together, and can be arranged immediately after group meeting, or after the 
+          code/data backup deadline. 
+        </p>
+        <p>
+          (ii) <strong>Group dinner:</strong> Every semester, the group shares a meal at a 
+          favorite restaurant. These are usually planned in advance to accommodate everyone’s availability.
+        </p>
+        <p>
+          (iii) <strong>Summer retreat:</strong> Typically over the summer, the group will coordinate a short 
+          day trip to a nearby location, often involving a short hike and a picnic in a natural setting.
+        </p>
+        <p>
+          (iv) <strong>Holiday party:</strong> Sohang will host an annual group holiday gathering, typically 
+          at the end of the fall semester.
+        </p>
+        <p>
+          Participation in group social activities should never feel mandatory or exclusionary. Group members 
+          should let Sohang know if they ever feel this way. People have different schedules, preferences, and 
+          responsibilities outside of work. The goal is to create opportunities for shared leisure, and meaningful 
+          connections with co-workers, not obligations. Group activities should be welcoming, low-pressure, 
+          and respectful of different personalities and circumstances.
+        </p>
+
+        <h3 id="group-responsibilities">Group Responsibilities</h3>
+        <p>
+          A healthy group depends on shared responsibility. Even in a theoretical and computational setting, 
+          there is important collective work involved in keeping projects and meetings organized, maintaining 
+          code and documentation, supporting new members, and sustaining a functional group.
+        </p>
+        <p>
+          To help facilitate this, we currently maintain two rotating roles:
+        </p>
+        <p>
+          (i) <strong>Group meeting organizer:</strong>
+          This person is responsible for scheduling group meetings and helping reserve rooms 
+          at the beginning of each semester.
+        </p>
+          (ii) <strong>Social activities planner:</strong>
+          This member is responsible for organizing the group dinners and the annual group retreat. 
+          Sohang will coordinate with this person when hosting the group holiday party.
+        <p>
+      </div>
+
+      <aside class="toc">
+        <div class="toc-box">
+          <h2 class="toc-title">On this page</h2>
+          <div class="toc-links">
+            <a href="#mentorship-values">Mentorship Values</a>
+            <a href="#work-hours">Work Hours</a>
+            <a href="#meetings-sohang">Meetings with Sohang</a>
+            <a href="#group-meetings">Group Meetings</a>
+            <a href="#paper-writing">Paper Writing</a>
+            <a href="#attending-conferences">Attending Conferences</a>
+            <a href="#code-backup">Code/Data Backup</a>
+            <a href="#social-activities">Social Activities</a>
+            <a href="#group-responsibilities">Group Responsibilities</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University
+    </div>
+  </footer>
+
+</body>
+</html>

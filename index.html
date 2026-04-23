@@ -327,19 +327,6 @@ grid-template-columns:1fr;
 }
 
 @media (max-width: 600px) {
-  .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav {
-    width: 100%;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
   .hero {
     padding: 56px 0;
   }
@@ -373,6 +360,36 @@ grid-template-columns:1fr;
   }
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+}
+
+
 </style>
 </head>
 
@@ -382,6 +399,9 @@ grid-template-columns:1fr;
 <div class="container topbar-inner">
 
 <a href="/" class="site-title">The Kundu Group</a>
+
+
+<button class="menu-toggle" onclick="toggleMenu()">Menu</button>
 
 <nav class="nav">
 <a href="#members">Members</a>

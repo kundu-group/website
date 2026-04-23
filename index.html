@@ -327,6 +327,21 @@ grid-template-columns:1fr;
 }
 
 @media (max-width: 600px) {
+
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  
   .hero {
     padding: 56px 0;
   }
@@ -369,26 +384,6 @@ grid-template-columns:1fr;
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-}
-
 
 </style>
 </head>
@@ -401,7 +396,6 @@ grid-template-columns:1fr;
 <a href="/" class="site-title">The Kundu Group</a>
 
 
-<button class="menu-toggle" onclick="toggleMenu()">Menu</button>
 
 <nav class="nav">
 <a href="#members">Members</a>
@@ -733,12 +727,6 @@ src="https://maps.google.com/maps?q=Ohio%20State%20University%20Department%20of%
 </div>
 
 </footer>
-
-<script>
-function toggleMenu() {
-  document.querySelector('.nav').classList.toggle('active');
-}
-</script>
 
 </body>
 </html>

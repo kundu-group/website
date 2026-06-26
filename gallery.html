@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kundu Group | Gallery</title>
+
+  <style>
+    :root {
+      --osu-red: #bb0000;
+      --border: #dddddd;
+      --text: #222222;
+      --max-width: 1050px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #ffffff;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .site-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--osu-red);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #222222;
+    }
+
+    .nav a:hover {
+      color: var(--osu-red);
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      color: var(--osu-red);
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .gallery-item {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    .caption {
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+      color: #444444;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #666666;
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="site-title">The Kundu Group</a>
+
+      <nav class="nav">
+        <a href="index.html#members">Members</a>
+        <a href="index.html#research">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="expectations.html">Expectations</a>
+        <a href="index.html#join">Openings</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="section-title">Gallery</h1>
+
+      <div class="gallery-item">
+        <div class="caption"><strong>June, 2026:</strong> A first glimpse of our group space!</div>
+        <img src="images/gallery/2026/office_0.jpg" alt="A first glimpse of the Kundu Group space">
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University
+    </div>
+  </footer>
+
+</body>
+</html>

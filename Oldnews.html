@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Older News | Kundu Group</title>
+
+<style>
+:root {
+  --osu-red:#bb0000;
+  --osu-dark-red:#8c0000;
+  --border:#dddddd;
+  --light-gray:#f5f5f5;
+  --text:#222222;
+  --max-width:1050px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Georgia,"Times New Roman",Times,serif;
+color:var(--text);
+line-height:1.65;
+background:white;
+}
+
+a{
+color:var(--osu-red);
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+.container{
+width:min(var(--max-width),calc(100% - 40px));
+margin:auto;
+}
+
+.topbar{
+border-bottom:1px solid var(--border);
+background:white;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.topbar-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+}
+
+.site-title{
+font-size:1.35rem;
+font-weight:bold;
+color:var(--osu-red);
+text-decoration:none;
+}
+
+.nav{
+display:flex;
+gap:22px;
+}
+
+.nav a{
+color:#222;
+text-decoration:none;
+}
+
+.nav a:hover{
+color:var(--osu-red);
+}
+
+.hero{
+background:linear-gradient(135deg,var(--osu-red),var(--osu-dark-red),#222);
+color:white;
+padding:80px 0;
+}
+
+.hero .eyebrow{
+border:1px solid rgba(255,255,255,.4);
+display:inline-block;
+padding:6px 12px;
+font-size:.75rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.hero h1{
+margin:0;
+font-size:3rem;
+font-weight:normal;
+}
+
+.hero p{
+margin-top:20px;
+max-width:760px;
+font-size:1.1rem;
+}
+
+.section{
+padding:30px 0;
+}
+
+.section-title{
+font-size:2rem;
+color:var(--osu-red);
+margin-bottom:30px;
+border-bottom:1px solid var(--border);
+padding-bottom:10px;
+font-weight:normal;
+}
+
+.two-col{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
+}
+
+.news-item{
+border-left:4px solid var(--osu-red);
+padding-left:16px;
+margin-bottom:26px;
+}
+
+.news-date{
+font-size:.8rem;
+letter-spacing:.08em;
+color:#666;
+text-transform:uppercase;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.older-news-link{
+margin-top:4px;
+}
+
+.older-news-link a{
+display:inline-block;
+border:1px solid var(--border);
+padding:6px 12px;
+font-size:.85rem;
+color:var(--osu-red);
+background:white;
+}
+
+.older-news-link a:hover{
+background:var(--light-gray);
+text-decoration:none;
+}
+
+.sidebar-box{
+background:var(--light-gray);
+border:1px solid var(--border);
+padding:24px;
+}
+
+.sidebar-box h3{
+margin-top:0;
+color:var(--osu-red);
+font-size:1.3rem;
+font-weight:normal;
+}
+
+.members-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.member{
+display:grid;
+grid-template-columns:130px 1fr;
+gap:18px;
+}
+
+.member-photo{
+  width:130px;
+  height:150px;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+
+.member-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+
+.member h3{
+margin:0 0 6px;
+font-size:1.25rem;
+font-weight:normal;
+}
+
+.pronouns {
+  font-size: 0.75em;
+  font-weight: normal;
+  color: #666666;
+}
+
+
+.member-role{
+color:#222222;
+#color:var(--osu-red);
+font-size:.8rem;
+font-weight:bold;
+text-transform:uppercase;
+margin-bottom:8px;
+}
+
+.member{
+font-size:0.84rem;
+}
+
+.research-header{
+text-align:center;
+margin-bottom:40px;
+}
+
+.research-intro{
+max-width:900px;
+margin:auto;
+text-align:center;
+margin-bottom:40px;
+}
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.research-panel{
+text-align:center;
+}
+
+.research-graphic{
+width:180px;
+height:180px;
+border-radius:50%;
+background:#222222;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+overflow:hidden;   /* ADDED: crops image to circle */
+}
+
+.research-graphic img{
+width:100%;
+height:100%;
+object-fit:cover;   /* ADDED: fills circle properly */
+display:block;
+}
+
+
+.research-panel h3{
+font-size:1.2rem;
+margin-bottom:10px;
+color:#555;
+#color:var(--osu-red);
+font-weight:medium;
+}
+
+.about-text{
+max-width:900px;
+margin:0;
+}
+
+.awards{
+margin-top:30px;
+}
+
+.awards ul{
+padding-left:20px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+margin-top:30px;
+}
+
+.map-placeholder{
+width:100%;
+height:220px;
+background:#ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#666;
+}
+
+.join-box{
+background:linear-gradient(135deg,var(--osu-red),var(--osu-dark-red));
+color:white;
+padding:30px;
+}
+
+.join-box h2{
+margin-top:0;
+font-weight:normal;
+}
+
+footer{
+border-top:1px solid var(--border);
+padding:20px 0;
+font-size:.9rem;
+color:#666;
+margin-top:40px;
+}
+
+.footer-row{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+@media(max-width:800px){
+
+.two-col{
+grid-template-columns:1fr;
+}
+
+.members-grid{
+grid-template-columns:1fr;
+}
+
+.research-grid{
+grid-template-columns:1fr;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media (max-width: 600px) {
+
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 22px 0;
+  }
+
+  .member {
+    grid-template-columns: 1fr;
+  }
+
+  .member-photo {
+    width: 130px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .research-graphic {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+<div class="container topbar-inner">
+
+<a href="index.html" class="site-title">The Kundu Group</a>
+
+<nav class="nav">
+<a href="index.html#members">Members</a>
+<a href="index.html#research">Research</a>
+<a href="publications.html">Publications</a>
+<a href="expectations.html">Expectations</a>
+<a href="index.html#join">Openings</a>
+<a href="gallery.html">Gallery</a>
+</nav>
+
+</div>
+</header>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Older News</h2>
+
+<p>
+<a href="index.html">← Back to News and Updates</a>
+</p>
+
+<!--
+Move older news items here once they are no longer among the four newest items on index.html.
+Keep the same format:
+
+<div class="news-item">
+<div class="news-date">Month Year</div>
+Older news item goes here.
+</div>
+-->
+
+<p>
+Older news items will be archived here.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-row">
+
+<div>
+© Kundu Group · Department of Chemistry and Biochemistry · The Ohio State University
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
